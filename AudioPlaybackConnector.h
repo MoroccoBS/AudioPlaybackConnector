@@ -37,6 +37,8 @@ NOTIFYICONIDENTIFIER g_niid = {
 UINT WM_TASKBAR_CREATED = 0;
 bool g_reconnect = false;
 std::vector<std::wstring> g_lastDevices;
+std::wstring g_audioOutputDevice;  // Device name/ID for audio output (empty = default)
+std::unordered_map<std::wstring, std::tuple<AudioGraph, AudioDeviceInputNode, AudioDeviceOutputNode>> g_audioGraphs;  // Audio routing graphs per A2DP device
 
 #include "Util.hpp"
 #include "I18n.hpp"
